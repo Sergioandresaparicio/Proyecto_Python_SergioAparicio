@@ -1,0 +1,86 @@
+[
+    {
+        "Fecha": "2026-01-20",
+        "Monto": 1234.0,
+        "categoria": "Comida",
+        "Descripcion": "Asdf"
+    },
+    {
+        "Fecha": "2026-01-20",
+        "Monto": 123.0,
+        "categoria": "Comida",
+        "Descripcion": "Amanecer_Paisa"
+    },
+    {
+        "Fecha": "2026-01-21",
+        "Monto": 5651.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2026-01-19",
+        "Monto": 5651.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2026-01-21",
+        "Monto": 1.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2026-01-21",
+        "Monto": 5651.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2026-01-21",
+        "Monto": 5651.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2026-02-21",
+        "Monto": 10000.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2025-01-21",
+        "Monto": 5651.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2025-01-21",
+        "Monto": 5651.0,
+        "categoria": "Transporte",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2026-01-22",
+        "Monto": 50000.0,
+        "categoria": "Entretenimiento",
+        "Descripcion": "Pola Mientras Hacia Codigo"
+    },
+    {
+        "Fecha": "2026-01-22",
+        "Monto": 5000.0,
+        "categoria": "Otros",
+        "Descripcion": "Archivo Digital"
+    },
+    {
+        "Fecha": "2026-01-22",
+        "Monto": 0.3,
+        "categoria": "Otros",
+        "Descripcion": "N/A"
+    },
+    {
+        "Fecha": "2026-01-22",
+        "Monto": 54155.0,
+        "categoria": "Comida",
+        "Descripcion": "Haoohaos"
+    }
+]

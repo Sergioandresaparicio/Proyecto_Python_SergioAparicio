@@ -1,0 +1,22 @@
+{
+    "periodo": "Diario - 2026-01-22",
+    "total_general": 55000.0,
+    "gastos_por_categoria": {
+        "Entretenimiento": 50000.0,
+        "Otros": 5000.0
+    },
+    "detalle_gastos": [
+        {
+            "Fecha": "2026-01-22",
+            "Monto": 50000.0,
+            "categoria": "Entretenimiento",
+            "Descripcion": "Pola Mientras Hacia Codigo"
+        },
+        {
+            "Fecha": "2026-01-22",
+            "Monto": 5000.0,
+            "categoria": "Otros",
+            "Descripcion": "Archivo Digital"
+        }
+    ]
+}

@@ -3,6 +3,17 @@ import json
 import os
 formato="%Y-%m-%d" #se da el formato de fecha segun esta determinado en el diccionario  
 
+#En este punto creo dos limites especificos para los gastos permitidos diario y semanalmente y se guardan en el archivo limite_gastos.json
+alerta={"Dia": 50000,
+            "semana" :350000,
+                }
+with open("limite_gastos.json","w",encoding="utf-8") as document:
+    json.dump(alerta,document,indent=4)
+    print("Datos Ingresados exitosamente.")
+
+    
+
+
 def reporte ():
     while True:
         print("=============================================")
@@ -16,19 +27,30 @@ def reporte ():
         print("4. Regresar al menú principal")
         print("=============================================")
         opcion= int(input("Ingrese una opcion: "))
-        if opcion==1:    
+        if opcion==1:
+            with open ("limite_gastos.json", "r",encoding="utf-8") as documento: 
+                alertas=json.load(documento)    
             inicio_busqueda=input("Ingrese la fecha donde va a iniciar su busqueda en el siguiente formato YYYY-MM-DD: ") #Solicita la fecha en el formato establecido
             if os.path.exists("gastos.json"):# Verifica si el archivo "gastos.json" existe.
                 with open("gastos.json","r",encoding="utf-8")as document:# Abre el archivo en modo lectura con codificación UTF-8.
-                    report=json.load(document)# Carga los datos del archivo como una lista de diccionarios.
+                    report=json.load(document)# Carga los datos del archivo como una lista de diccionarios. 
             precio=0# Inicializa una variable para acumular el total del día.
             for c in report:# Recorre cada gasto en la lista cargada.
                 fech=c["Fecha"]# Obtiene la fecha del gasto actual.
                 if fech == inicio_busqueda:# Si la fecha del gasto coincide exactamente con la fecha ingresada.
                     precio += c["Monto"]#suma su monto al total.
+            notifica=alertas["Dia"]
+            if precio == notifica:
+                print("Llego al limite maximo de presupuesto diario")
+            elif precio <= notifica:
+                print(f"Su dinero restante para llegar al limite es {notifica-precio}")
+            elif precio >= notifica:
+                print(f"Supero el monto de gastos diarios por {precio-notifica}")
             print(precio)# Muestra el total gastado ese día.
             input("Presione enter para continuar.")
         elif opcion == 2:
+            with open ("limite_gastos.json", "r",encoding="utf-8") as documento: 
+                alertas=json.load(documento)
             inicio_busqueda=input("Ingrese la fecha donde va a iniciar su busqueda en el siguiente formato YYYY-MM-DD")
             try:
                 total=0# Inicializa el total semanal en 0.
@@ -42,6 +64,13 @@ def reporte ():
                     ffecha = datetime.strptime(fech, formato)# Convierte esa fecha a objeto datetime.
                     if ffecha >= fecha_inicio and ffecha <= fecha_fin:# Si la fecha del gasto está dentro del rango semanal
                         total += c["Monto"]#suma su monto al total.
+                notifica=alertas["semana"]
+                if total == notifica:
+                    print("Llego al limite maximo de presupuesto semanal")
+                elif total <= notifica:
+                    print(f"Su dinero restante para llegar al limite semanal es {notifica-total}")
+                elif total >= notifica:
+                    print(f"Supero el monto de gastos semanales por {total-notifica}")
                 print(f"El total de gastos en el periodo es: {total}")# Muestra el total semanal.
                 input("ENTER PARA CONTINUAR .....")
             except ValueError:# Si la fecha ingresada no tiene el formato correcto
